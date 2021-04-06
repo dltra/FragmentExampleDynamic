@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FragmentB extends Fragment {
-
+    View view;
     //View inflation/instantiation
     @Nullable
     @Override
@@ -23,6 +23,7 @@ public class FragmentB extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        this.view = view;
         //setup here
         TextView textView = view.findViewById(R.id.b_textview);
         textView.setText(R.string.greeting);
