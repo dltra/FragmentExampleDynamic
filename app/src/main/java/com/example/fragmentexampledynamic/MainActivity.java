@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
         // Replace the contents of the container with the new fragment
-        ft.add(R.id.fragment_container, new FragmentB(),"FragmentName");
+        ft.add(R.id.fragment_container, FragmentB.newInstance(4,"Hello SuperStar"),"FragmentName");
         //or ft.replace(R.id.fragment_container, new FragmentB());
 
         // Complete the changes added above
