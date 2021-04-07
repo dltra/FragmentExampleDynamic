@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
     public void update_greeting(View view) {
         //access the fragment by tag
         FragmentB fragmentB = (FragmentB)getSupportFragmentManager().findFragmentByTag("FragmentName");
-        ((TextView)fragmentB.view.findViewById(R.id.b_textview)).setText(R.string.greeting2);
+        if(fragmentB!=null)
+            ((TextView)fragmentB.view.findViewById(R.id.b_textview)).setText(R.string.greeting2);
+    }
+
+    public void fragment_button_onclick(View view) {
+        ((Button)view).setText(R.string.clicked_message);
     }
 }
